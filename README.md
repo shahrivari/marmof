@@ -1,2 +1,2 @@
 # marmof
-MapReduce based Motif Finder
+MapReduce based Motif Finderr
