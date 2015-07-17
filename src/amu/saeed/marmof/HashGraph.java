@@ -12,6 +12,15 @@ public class HashGraph implements Graph {
     public Set<Integer> vertices = new HashSet<Integer>();
     private int edgeCount = 0;
 
+    public static HashGraph buildFromEdges(Collection<Edge> edges) {
+        HashGraph graph = new HashGraph();
+        for (Edge e : edges)
+            graph.addEdge(e.src, e.dest);
+        graph.update();
+        return graph;
+    }
+
+
     public static HashGraph readGraph(Reader reader) throws IOException {
         BufferedReader br = new BufferedReader(reader);
         String line;

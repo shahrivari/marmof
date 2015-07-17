@@ -12,6 +12,14 @@ public class MatGraph implements Graph {
     public boolean[] adjArr;
     private int edgeCount = 0;
 
+    public static MatGraph buildFromEdges(Collection<Edge> edges) {
+        MatGraph graph = new MatGraph();
+        for (Edge e : edges)
+            graph.addEdge(e.src, e.dest);
+        graph.update();
+        return graph;
+    }
+
     public static MatGraph readGraph(Reader reader) throws IOException {
         BufferedReader br = new BufferedReader(reader);
         String line;
